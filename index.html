@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Todo List </h1>
+            <p class="subtitle">Organize your tasks easily </p>
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchInput" 
+                placeholder="Search tasks... "
+                aria-label="Search tasks"
+            >
+        </header>
+
+        <main>
+            <section class="add-task-section">
+                <form class="add-task-form" id="addTaskForm">
+                    <input 
+                        type="text" 
+                        class="task-input" 
+                        id="taskInput" 
+                        placeholder="Enter a new task..."
+                        required
+                        maxlength="200"
+                    >
+                    <button type="submit" class="add-btn" id="addBtn">Add Task </button>
+                </form>
+            </section>
+<div class="table-container">
+  <table id="taskTableBody">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>TODO Description</th>
+      <th>User ID</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  </tbody>
+  <tfoot class="table-footer">
+    <tr></tr>
+  </tfoot>
+</table>
+    </div>
+
+        </main>
+
+     <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <!-- Close Button -->
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+                    </svg>
+                </div>
+                <h2 class="modal-title">Confirm Delete</h2>
+                <p class="modal-message">Are you sure you want to delete this item? This action cannot be undone.</p>
+            </div>
+
+            <!-- Modal Actions -->
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn btn-delete" onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+<div class="modal-overlay" id="completeModalOverlay" onclick="closeCompleteModal(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeCompleteModal()">&times;</button>
+        
+        <div class="modal-header">
+         <div class="modal-icon">
+    <!-- Circular Checkmark SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 64 64" fill="none" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="32" cy="32" r="30" stroke="#4CAF50" stroke-width="4"/>
+        <path d="M20 34 L28 42 L44 24" stroke="#4CAF50" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</div>
+
+            <h2 class="modal-title">Mark as Completed</h2>
+            <p class="modal-message">Do you want to mark this task as completed?</p>
+        </div>
+
+        <div class="modal-actions">
+            <button class="btn btn-cancel" onclick="closeCompleteModal()">Cancel</button>
+            <button class="btn btn-confirm" onclick="confirmComplete()">Yes, Complete</button>
+        </div>
+    </div> 
+</div>
+
+
+
+
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+    <script src="inline-edite.js"></script>
+</body>
+</html>
