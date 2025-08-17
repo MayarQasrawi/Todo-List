@@ -5,18 +5,18 @@ A simple and interactive TODO List web application that allows users to manage t
 
 ## 🚀 Features
 
-- 📥 Retrieve initial TODO list from a dummy API.
-- ➕ Add new TODO items.
-- ❌ Delete TODO items with confirmation.
-- ✅ Mark TODO items as done.
-- 📊 Display count of total, completed, and pending tasks in the footer.
-- 🔍 Search/filter TODOs dynamically.
-- 💾 Data persistence using browser LocalStorage.
-- ✏️ Inline edit for tasks.
+- Retrieve initial TODO list from a dummy API.
+- Add new TODO items.
+- Delete TODO items with confirmation.
+- Mark TODO items as done.
+- Display count of total, completed, and pending tasks in the footer.
+- Search/filter TODOs dynamically.
+- Data persistence using browser LocalStorage.
+- Inline edit for tasks.
 
 ## 🌐 Live Demo
 
-*(...)*
+[Live Demo](https://mayarqasrawi.github.io/Todo-List/)
 
 ## 💻 Technologies Used
 
