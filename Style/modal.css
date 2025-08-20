@@ -103,6 +103,10 @@
             position: relative;
             overflow: hidden;
         }
+        .btn[disabled],.btnn[disabled] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
 
         .btn-cancel {
             background: #f0f0f0;

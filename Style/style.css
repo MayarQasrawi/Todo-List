@@ -200,7 +200,10 @@
   td:nth-child(2) {
     text-align: left;
   }
-  
+
+  table tr:hover {
+    background-color: rgba(0, 0, 0, 0.015);
+  }
 
   .btnn{
  color: white;
@@ -212,17 +215,35 @@
   }
 
   .btn-del {
-    background-color: var(--second-color);
-   
+       background-color: var(--third-color);
+
   }
   .btn-edite{
-    background-color: var(--third-color);
+        background-color: var(--second-color);
+
 
   }
 
+  td[data-status] {
+    background-color: var(--first-color);
+  }
+  
+  .badge.completed { color: #fff; background-color: #28a745; padding: 2px 6px; border-radius: 4px; }
+.badge.pending { color: #fff; background-color: #ffc107; padding: 2px 6px; border-radius: 4px; }
+
+  td[data-status="Completed"] {
+    color: var(--fourth-color);
+  }
+  td[data-status="Pending"] {
+    color: var(--third-color);
+  }
+
+  .btn-group.only-delete .btn-del {
+    flex: 1; /* Makes the button expand to fill the container */
+}
  .btnn:hover {
-    background-color: linear-gradient(to right, #ff7e5f, #feb47b);
-  }
+  opacity: 0.8;
+}
 
   .btn-done {
     background-color: var(--fourth-color);
@@ -236,8 +257,7 @@
 
   .btn-group {
     display: flex;
-    gap: 5px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 
