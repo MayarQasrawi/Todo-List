@@ -2,6 +2,7 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function editTask(tr) {
   const todoCell = tr.cells[1];
+  // const width = todoCell.clientWidth; // Adjust width to fit within cell
   const originalText = todoCell.textContent.trim();
 
   // Create input 
@@ -11,6 +12,7 @@ function editTask(tr) {
   input.classList.add("edit-input");
   todoCell.textContent = "";
   todoCell.appendChild(input);
+  // input.style.width = `${width}px`;
   input.focus();
 
 

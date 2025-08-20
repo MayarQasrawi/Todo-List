@@ -7,7 +7,7 @@
             /* Text colors */
             --text-light: #ffffff;
             --text-muted: #888888;
-
+   
 
 
             --shadow: rgba(0, 0, 0, 0.1);
@@ -29,7 +29,16 @@
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
+/* 
+ background-image: 
+        linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.9)), 
+        url('../Images/flower.png');    background-repeat: repeat;      
+    background-size: 50px 50px;     
+    background-position: top left;   */
+
+
         }
+
 
 
 
@@ -65,32 +74,41 @@
         }
 
           .search-input{
-            padding: 12px 64px;
+            padding: 12px 16px;
             border-width: 0px;
             margin-top: 16px;
             border-radius: 24px;
             font-size: 16px;
             transition: border-color 0.3s ease;
+            width: 35%;
         }
 
-        .edit-input{
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-            background-color: var(--first-color);
-            width: 100%;
-            outline: none;
-        }
+   
+       .edit-input {
+  width: 100%;            
+  height: 100%;           
+  box-sizing: border-box;  
+  border: none;            
+  padding: 0;             
+  margin: 0;
+  font: inherit;         
+  outline: none;          
+  background-color: rgba(255, 192, 203, 0.3); 
+  border-radius: 6px;      /* optional: add a border radius */
+  
+}
 
-       
+
+   .todo-cell{
+    width: 40%px; /* Fixed width for all cells */
+    box-sizing: border-box;
+   }
 
 
 
         @media (max-width: 480px) {
              .search-input{
-            padding: 12px 16px;
+            width: 80%;
              }
 
              body{
@@ -189,24 +207,31 @@
     color: var(--text-dark);
   }
   th, td {
+    
     padding: 10px 15px;
     border: 1px solid #ddd;
     text-align: center;
   }
+
+
   th {
     background-color: #f5f5f5;
     font-weight: bold;
   }
   td:nth-child(2) {
     text-align: left;
+
   }
 
-  table tr:hover {
-    background-color: rgba(0, 0, 0, 0.015);
-  }
+
+
+table tr:hover {
+  background-color: rgba(255, 192, 203, 0.15); 
+}
+
 
   .btnn{
- color: white;
+    color: white;
     border: none;
     padding: 6px 12px;
     border-radius: 4px;
@@ -220,23 +245,16 @@
   }
   .btn-edite{
         background-color: var(--second-color);
-
-
   }
 
-  td[data-status] {
-    background-color: var(--first-color);
-  }
-  
-  .badge.completed { color: #fff; background-color: #28a745; padding: 2px 6px; border-radius: 4px; }
-.badge.pending { color: #fff; background-color: #ffc107; padding: 2px 6px; border-radius: 4px; }
 
-  td[data-status="Completed"] {
-    color: var(--fourth-color);
+
+  /* td[data-status="Completed"] {
+    background-color: rgba(40, 167, 69, 0.1);
   }
   td[data-status="Pending"] {
-    color: var(--third-color);
-  }
+    background-color: rgba(255, 193, 7, 0.1);
+  } */
 
   .btn-group.only-delete .btn-del {
     flex: 1; /* Makes the button expand to fill the container */
@@ -259,13 +277,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 3px;
   }
 
+
   tfoot td {
-    border: none;
-    padding-top: 15px;
-    font-weight: bold;
-    background-color: var(--first-color);
+      border: none;
+      padding-top: 15px;
+      font-weight: bold;
+      background-color: var(--first-color);
     padding: 4px;
     
   }
@@ -279,5 +299,30 @@
   }
 
 
-  
+  #themeBtn {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    padding: 8px 16px;
+    background-color: var(--second-color); /* Uses your theme color */
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 6px var(--shadow);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#themeBtn:hover {
+    background-color: var(--third-color); /* Slightly darker shade on hover */
+    transform: translateY(-2px);
+}
+
+#themeBtn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px var(--shadow);
+}
+
 

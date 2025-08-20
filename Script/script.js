@@ -2,7 +2,6 @@ const taskTableBody = document.querySelector("tbody");
 const footerRow = document.querySelector("tfoot tr");
 const addTaskForm = document.getElementById("addTaskForm");
 const taskInput = document.getElementById("taskInput");
-let taskIdCounter = 1000; // start number for new tasks
 
 // Load tasks from localStorage or fetch from API
 async function loadTasks() {
@@ -124,18 +123,18 @@ const onlyDelete = !completeButton && !editButton;
 
   tr.innerHTML = `
         <td>${id}</td>
-        <td class="todo-cell ${completed ? "line-through" : ""}">${todo}</td>
+        <td class="todo-cell ${completed ? "line-through" : ""}">${todo.trim()}</td>
         <td>${userId}</td>
         <td data-status=${completed ? "Completed" : "Pending"}>${
-    completed ? "&#10004;" : "&#10008;"
+    completed ? "Completed" : "Pending"
   }</td>
         <td>
         <section class="btn-group ${onlyDelete ? "only-delete" : ""}">
                 ${completeButton}
-                <button class="btnn btn-del" onclick="openModal(this.closest('tr'))">
-                  <span title="delete"> ${completed?"Delete":"&#10007;"}</span>
-                </button>
                 ${editButton}
+                <button class="btnn btn-del" onclick="openModal(this.closest('tr'))">
+                  <span title="delete">&#10007;</span>
+                </button>
             </section>
         </td>
     `;

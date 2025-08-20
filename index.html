@@ -7,8 +7,10 @@
 
     <link rel="stylesheet" href="./Style/modal.css">
     <link rel="stylesheet" href="./Style/style.css">
+
 </head>
 <body>
+
     <div class="container">
         <header>
             <h1>My Todo List </h1>
@@ -36,6 +38,8 @@
                     <button type="submit" class="add-btn" id="addBtn">Add Task </button>
                 </form>
             </section>
+                        <!-- <button id="themeBtn">Change Theme</button> -->
+
 <div class="table-container">
   <table id="taskTableBody">
     <thead>
@@ -57,6 +61,7 @@
     </div>
 
         </main>
+
 
      <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
         <div class="modal" onclick="event.stopPropagation()">
@@ -108,9 +113,9 @@
 
 
 
-
     <script src="./Script/script.js"></script>
     <script src="./Script/modal.js"></script>
     <script src="./Script/inline-edite.js"></script>
+    <script src="./Script/theme.js"></script>
 </body>
 </html>
